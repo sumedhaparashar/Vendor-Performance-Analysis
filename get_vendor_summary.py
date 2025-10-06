@@ -7,7 +7,7 @@ logging.basicConfig(
     filename="logs/get_vendor_summary.log",
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
-    filemode="a"
+    filemode="a",
     force = True
 )
 
@@ -89,7 +89,7 @@ def clean_data(df):
     df['GrossProfit'] = df['TotalSalesDollars'] - df['TotalPurchaseDollars']
     df['ProfitMargin'] = (df['GrossProfit']/df['TotalSalesDollars'])*100
     df['StockTurnover'] = df['TotalSalesQuantity']/df['TotalPurchaseQuantity']
-    df['SalestoPurchaseRatio'] = df['TotalSalesDollars']/df['TotalPurchaseDollars']
+    df['SalesToPurchaseRatio'] = df['TotalSalesDollars']/df['TotalPurchaseDollars']
 
     return df
 
